@@ -1,0 +1,398 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", sans-serif;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+body {
+	background: url(img/bg.jpg) no-repeat center;
+	background-size: cover;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.header {
+	width: 100%;
+	font-size: 30px;
+	margin: 20px 20px 20px 100px;
+	color: rgb(212, 135, 71);
+	text-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+.container {
+	max-width: 1200px;
+	padding: 0 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.image {
+	border-radius: 50%;
+	opacity: 1;
+}
+
+.image,
+.nav-menu {
+	width: calc(50% - 20px);
+}
+
+.title {
+	background-color: #035d43;
+	display: flex;
+	color: #fff;
+	padding: 20px;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+	align-items: center;
+	justify-content: space-between;
+}
+.item {
+	position: relative;
+}
+
+.icon {
+	position: relative;
+	width: 14px;
+}
+
+.icon1 {
+	position: relative;
+	width: 14px;
+}
+.a-hide {
+	display: none;
+}
+
+.icon::before,
+.icon::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	width: 14px;
+	height: 3px;
+	background-color: #fff;
+	top: -1.5px;
+}
+.icon1::before,
+.icon1::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	width: 14px;
+	height: 3px;
+	background-color: #fff;
+	top: -1.5px;
+}
+
+.icon::after {
+	transform: rotate(90deg);
+}
+
+.text {
+	background-color: #ffffff60;
+	color: #fff;
+	line-height: 26px;
+	margin: 6px 0;
+	opacity: 0;
+	height: 0;
+	transition: .3s linear;
+}
+
+.item:target .text {
+	height: auto;
+	padding: 20px;
+	margin: 12px 0;
+	opacity: 1;
+}
+
+.item:target .wrapper {
+	opacity: 1;
+	padding: 20px;
+	margin: 12px 0;
+	height: auto;
+}
+.item:target .bg-project img {
+	opacity: 1;
+	height: auto;
+}
+.item:target .bg-project {
+	opacity: 1;
+	margin: 12px 0;
+	height: auto;
+}
+.item:target .icon::after {
+	transform: rotate(0);
+}
+.item:target .a-show {
+	display: none;
+}
+.item:target .a-hide {
+	display: contents;
+}
+
+@media screen and (max-width: 960px) {
+	.container {
+		max-width: 600px;
+	}
+	.wrapper .button {
+		max-width: 60px;
+	}
+
+	.image,
+	.nav-menu {
+		width: 100%;
+		margin: 20px 0;
+	}
+}
+@media (pointer: coarse) {
+	.wrapper .button:hover {
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		width: none;
+	}
+}
+li {
+	position: relative;
+	list-style: none;
+	padding-bottom: 20px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+li:before {
+	content: "";
+	position: absolute;
+	top: calc(40% + 10px);
+	left: 0;
+	width: 100%;
+	height: 15px;
+	background-color: rgba(52, 119, 207, 0.5);
+	border-radius: 1000px;
+}
+
+li:after {
+	content: "";
+	position: absolute;
+	top: calc(40% + 10px);
+	left: 0;
+	width: 0;
+	height: 15px;
+	background-color: rgb(10, 51, 104);
+	border-radius: 1000px;
+	animation-duration: .7s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	animation-delay: .5s;
+}
+
+.item:target .text li.html:after {
+	animation-name: html;
+}
+
+@keyframes html {
+	to {
+		width: 90%;
+	}
+}
+
+.item:target .text li.css:after {
+	animation-name: css;
+}
+
+@keyframes css {
+	to {
+		width: 80%;
+	}
+}
+
+.item:target .text li.js:after {
+	animation-name: js;
+}
+
+@keyframes js {
+	to {
+		width: 75%;
+	}
+}
+
+.item:target .text li.ng:after {
+	animation-name: ng;
+}
+
+@keyframes ng {
+	to {
+		width: 60%;
+	}
+}
+.wrapper {
+	position: relative;
+	background: #ffffff60;
+	transition: .3s;
+	opacity: 0;
+	overflow: hidden;
+}
+.wrapper .button {
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	margin: 0px 5px;
+	overflow: hidden;
+	background: #fff;
+	border-radius: 50px;
+	cursor: pointer;
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.219);
+	transition: all 0.3s ease-out;
+}
+.wrapper .button:hover {
+	width: 200px;
+}
+.wrapper .button .icon5 {
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	text-align: center;
+	border-radius: 50px;
+	box-sizing: border-box;
+	line-height: 60px;
+}
+.item:target .wrapper .button:nth-child(1) {
+	animation: anime .7s linear forwards;
+	animation-delay: .9s;
+	position: relative;
+	top: -90px;
+}
+.item:target .wrapper .button:nth-child(2) {
+	animation: anime .7s linear forwards;
+	animation-delay: 1.4s;
+	position: relative;
+	top: 90px;
+}
+.item:target .wrapper .button:nth-child(3) {
+	animation: anime .7s linear forwards;
+	animation-delay: 1.5s;
+	position: relative;
+	top: -90px;
+}
+.item:target .wrapper .button:nth-child(4) {
+	animation: anime .7s linear forwards;
+	animation-delay: 1.8s;
+	position: relative;
+	top: 90px;
+}
+
+@keyframes anime {
+	0% {
+		top: 90;
+	}
+
+	100% {
+		top: 0;
+	}
+}
+.wrapper .button:nth-child(1):hover .icon5 {
+	background: #0084ff;
+}
+.wrapper .button:nth-child(2):hover .icon5 {
+	background: #1da1f2;
+}
+.wrapper .button:nth-child(3):hover .icon5 {
+	background: #34465d;
+}
+
+.wrapper .button:nth-child(4):hover .icon5 {
+	background: #25d366;
+}
+.wrapper .button .icon5 i {
+	font-size: 25px;
+	line-height: 60px;
+	transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon5 i {
+	color: #fff;
+}
+.wrapper .button span {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 60px;
+	transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1) span {
+	color: #0084ff;
+}
+.wrapper .button:nth-child(2) span {
+	color: #1da1f2;
+}
+.wrapper .button:nth-child(3) span {
+	color: #34465d;
+}
+.wrapper .button:nth-child(4) span {
+	color: #25d366;
+}
+.bg-project {
+	background: #fff;
+	opacity: 0;
+	overflow: hidden;
+	position: relative;
+	height: 12px;
+	transition: .3s linear;
+}
+
+.bg-project img {
+	width: 100%;
+	opacity: 0;
+	height: 0;
+}
+
+.item:target .bg-project img {
+	animation: project-test 2s linear forwards;
+	position: relative;
+	right: 0;
+}
+
+@keyframes project-test {
+	0% {
+		right: 400px;
+	}
+	100% {
+		right: 0;
+	}
+}
+.bg-project span {
+	padding: 10px 20px;
+	border-radius: 20px;
+	box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.541);
+	color: #fff;
+	background: #0084ff;
+	font-size: 20px;
+	font-weight: 600;
+	position: relative;
+	opacity: 0;
+}
+
+.item:target .bg-project span {
+	animation: name-project 1s linear forwards;
+	animation-delay: 2s;
+	position: absolute;
+	right: 40px;
+	top: 40px;
+}
+@keyframes name-project {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.bg-project span:hover {
+	background: red;
+	transition: .5s linear;
+}
